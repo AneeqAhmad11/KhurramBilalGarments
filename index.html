@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khurram Bilal Garments</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>👕 Khurram Bilal Garments</h1>
+    <p class="tagline">Where Quality Meets Style</p>
+  </header>
+
+  <nav>
+    <button onclick="showMessage('bill')">🧾 Bill Entry</button>
+    <button onclick="showMessage('stock')">📦 Stock Entry</button>
+    <button onclick="showMessage('visual')">👁️ Stock Visual</button>
+    <button onclick="showMessage('general')">⚙️ General</button>
+    <button onclick="showMessage('summary')">📊 Summary / Shortcut</button>
+    <button onclick="showMessage('edit')">✏️ Edit</button>
+  </nav>
+
+  <main id="content">
+    <h2>Welcome to Khurram Bilal Garments</h2>
+    <p>Select any option above to begin your work.</p>
+    <p class="quote">"Smart shop management starts here!"</p>
+  </main>
+
+  <footer>
+    <p>© 2025 Khurram Bilal Garments | Developed by Friends 👨‍💻</p>
+  </footer>
+
+  <script>
+    function showMessage(option) {
+      const content = document.getElementById("content");
+      let text = "";
+
+      switch (option) {
+        case "bill":
+          text = "<h2>🧾 Bill Entry</h2><p>Start scanning and creating bills instantly with full details.</p>";
+          break;
+        case "stock":
+          text = "<h2>📦 Stock Entry</h2><p>Add new stock or update existing quantities.</p>";
+          break;
+        case "visual":
+          text = "<h2>👁️ Stock Visual</h2><p>Check which items are placed where — read-only view.</p>";
+          break;
+        case "general":
+          text = "<h2>⚙️ General</h2><p>Manage all shop features and records from one screen.</p>";
+          break;
+        case "summary":
+          text = "<h2>📊 Summary / Shortcut</h2><p>Quickly locate items and view summarized data.</p>";
+          break;
+        case "edit":
+          text = "<h2>✏️ Edit</h2><p>Edit or update any record easily.</p>";
+          break;
+      }
+
+      content.innerHTML = text;
+      content.classList.add("fade");
+      setTimeout(() => content.classList.remove("fade"), 400);
+    }
+  </script>
+</body>
+</html>
