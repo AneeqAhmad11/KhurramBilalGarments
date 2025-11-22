@@ -1,66 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khurram Bilal Garments</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Khurram Bilal Garments — Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>👕 Khurram Bilal Garments</h1>
-    <p class="tagline">Where Quality Meets Style</p>
+
+<div class="container">
+  <header class="header">
+    <div class="brand">
+      <div class="logo">KB</div>
+      <div class="title">
+        <h1>Khurram Bilal Garments</h1>
+        <p>Inventory & Billing — quick dashboard</p>
+      </div>
+    </div>
+
+    <div class="center">
+      <a class="btn" href="bill.html">Open Billing</a>
+    </div>
   </header>
 
-  <nav>
-    <button onclick="showMessage('bill')">🧾 Bill Entry</button>
-    <button onclick="showMessage('stock')">📦 Stock Entry</button>
-    <button onclick="showMessage('visual')">👁️ Stock Visual</button>
-    <button onclick="showMessage('general')">⚙️ General</button>
-    <button onclick="showMessage('summary')">📊 Summary / Shortcut</button>
-    <button onclick="showMessage('edit')">✏️ Edit</button>
-  </nav>
+  <!-- grid of module cards -->
+  <section class="nav-grid" aria-label="main modules">
+    <a class="nav-card" href="bill.html">
+      <div class="label">Bill Entry</div>
+      <div class="desc">Create invoices, add items via barcode, print or save bill.</div>
+      <div style="margin-top:12px" class="badge">BILL</div>
+    </a>
 
-  <main id="content">
-    <h2>Welcome to Khurram Bilal Garments</h2>
-    <p>Select any option above to begin your work.</p>
-    <p class="quote">"Smart shop management starts here!"</p>
-  </main>
+    <a class="nav-card" href="stock_entry.html">
+      <div class="label">Stock Entry</div>
+      <div class="desc">Add new stock, set buying price, location, and barcodes.</div>
+      <div style="margin-top:12px" class="badge">ADD</div>
+    </a>
 
-  <footer>
-    <p>© 2025 Khurram Bilal Garments | Developed by Friends 👨‍💻</p>
-  </footer>
+    <a class="nav-card" href="stock_view.html">
+      <div class="label">Stock View</div>
+      <div class="desc">Overview of on-hand, sold, and today’s movements with visuals.</div>
+      <div style="margin-top:12px" class="badge">VIEW</div>
+    </a>
 
-  <script>
-    function showMessage(option) {
-      const content = document.getElementById("content");
-      let text = "";
+    <a class="nav-card" href="general.html">
+      <div class="label">General</div>
+      <div class="desc">Codes, sub-codes, addresses, and configuration entries.</div>
+      <div style="margin-top:12px" class="badge">DATA</div>
+    </a>
 
-      switch (option) {
-        case "bill":
-          text = "<h2>🧾 Bill Entry</h2><p>Start scanning and creating bills instantly with full details.</p>";
-          break;
-        case "stock":
-          text = "<h2>📦 Stock Entry</h2><p>Add new stock or update existing quantities.</p>";
-          break;
-        case "visual":
-          text = "<h2>👁️ Stock Visual</h2><p>Check which items are placed where — read-only view.</p>";
-          break;
-        case "general":
-          text = "<h2>⚙️ General</h2><p>Manage all shop features and records from one screen.</p>";
-          break;
-        case "summary":
-          text = "<h2>📊 Summary / Shortcut</h2><p>Quickly locate items and view summarized data.</p>";
-          break;
-        case "edit":
-          text = "<h2>✏️ Edit</h2><p>Edit or update any record easily.</p>";
-          break;
-      }
+    <a class="nav-card" href="summary.html">
+      <div class="label">Summary / Reports</div>
+      <div class="desc">Daily and monthly reports, quick shortcuts and exports.</div>
+      <div style="margin-top:12px" class="badge">REPORTS</div>
+    </a>
 
-      content.innerHTML = text;
-      content.classList.add("fade");
-      setTimeout(() => content.classList.remove("fade"), 400);
-    }
-  </script>
+    <a class="nav-card" href="edit.html">
+      <div class="label">Edit</div>
+      <div class="desc">Edit barcodes, quantities and correct entries fast.</div>
+      <div style="margin-top:12px" class="badge">EDIT</div>
+    </a>
+  </section>
+
+  <!-- live preview / mini stats -->
+  <section class="page" aria-hidden="false">
+    <!-- wide area: stock table preview -->
+    <div class="card">
+      <h3 style="margin-bottom:8px">Stock Overview</h3>
+      <p class="small">Quick snapshot of key SKUs — sold vs in-balance.</p>
+
+      <table class="table" style="margin-top:12px">
+        <thead>
+          <tr>
+            <th>Barcode</th>
+            <th>Qty In</th>
+            <th>Qty Sold</th>
+            <th>Balance</th>
+            <th>Today</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>43791</td>
+            <td>300</td>
+            <td>250</td>
+            <td class="row-highlight">50</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>47914</td>
+            <td>200</td>
+            <td>130</td>
+            <td>70</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>34871</td>
+            <td>480</td>
+            <td>240</td>
+            <td>240</td>
+            <td>240</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- right column: small stats -->
+    <aside>
+      <div class="card">
+        <h3 style="margin-bottom:8px">Today</h3>
+        <div class="kv"><strong>Invoices:</strong><div class="small">24</div></div>
+        <div class="kv"><strong>Items Sold:</strong><div class="small">582</div></div>
+        <div class="kv"><strong>Top SKU:</strong><div class="small">34871 (240 sold)</div></div>
+        <div style="margin-top:12px">
+          <div class="small">Stock health</div>
+          <div style="margin-top:8px" class="progress"><span style="width:62%"></span></div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px" class="card">
+        <h3 style="margin-bottom:8px">Quick Actions</h3>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">
+          <a class="btn" href="stock_entry.html">Add Stock</a>
+          <a class="btn" href="stock_view.html">Open Stock View</a>
+          <a class="btn" href="summary.html">Open Reports</a>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+</div>
+
+<div class="footer">© 2025 Khurram Bilal Garments — Desktop UI</div>
+
 </body>
 </html>

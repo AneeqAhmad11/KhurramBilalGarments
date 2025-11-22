@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stock Entry — KB Garments</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+  <header class="header">
+    <div class="brand">
+      <div class="logo">KB</div>
+      <div class="title">
+        <h1>Stock Entry</h1>
+        <p>Add items and set location, price and barcode</p>
+      </div>
+    </div>
+    <div>
+      <a class="btn" href="index.html">Back</a>
+    </div>
+  </header>
+
+  <div class="page" style="margin-top:18px">
+    <div class="card">
+      <h3>Add New Stock</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+        <input placeholder="Barcode" style="padding:10px;border-radius:10px;border:1px solid var(--glass-border);background:transparent;color:inherit">
+        <input placeholder="Name / Description" style="padding:10px;border-radius:10px;border:1px solid var(--glass-border);background:transparent;color:inherit">
+        <input placeholder="Category" style="padding:10px;border-radius:10px;border:1px solid var(--glass-border);background:transparent;color:inherit">
+        <input placeholder="Quantity" style="padding:10px;border-radius:10px;border:1px solid var(--glass-border);background:transparent;color:inherit">
+        <input placeholder="Buy Price" style="padding:10px;border-radius:10px;border:1px solid var(--glass-border);background:transparent;color:inherit">
+        <input placeholder="Sell Price" style="padding:10px;border-radius:10px;border:1px solid var(--glass-border);background:transparent;color:inherit">
+      </div>
+
+      <div style="display:flex;gap:10px;margin-top:12px">
+        <button class="btn">Add Stock</button>
+        <button class="btn" style="background:linear-gradient(90deg,#ffb86b,#ff7b7b);color:#1a0f07">Add & Print Barcode</button>
+      </div>
+    </div>
+
+    <aside class="card">
+      <h3>Location / Subcode</h3>
+      <div style="margin-top:10px" class="small">Assign shelf/address codes (e.g. B18, DF27, LK27).</div>
+      <div style="margin-top:12px">
+        <div class="small">Recent barcodes</div>
+        <table class="table" style="margin-top:8px">
+          <tbody>
+            <tr><td>43791</td><td class="small">B18</td></tr>
+            <tr><td>47914</td><td class="small">DF27</td></tr>
+            <tr><td>18348</td><td class="small">LK27</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </aside>
+  </div>
+
+</div>
+
+<div class="footer">© 2025 Khurram Bilal Garments</div>
+</body>
+</html>

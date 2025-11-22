@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stock View — KB Garments</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+  <header class="header">
+    <div class="brand">
+      <div class="logo">KB</div>
+      <div class="title">
+        <h1>Stock View</h1>
+        <p>Inventory balances and visual insight</p>
+      </div>
+    </div>
+    <div>
+      <a class="btn" href="index.html">Back</a>
+    </div>
+  </header>
+
+  <div style="margin-top:18px" class="card">
+    <h3>Current Stock</h3>
+    <table class="table" style="margin-top:12px">
+      <thead>
+        <tr><th>Barcode</th><th>Qty In</th><th>Qty Sold</th><th>Balance</th><th>Sold Today</th><th>Health</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>43791</td><td>300</td><td>250</td><td class="row-highlight">50</td><td>20</td>
+          <td><div class="progress"><span style="width:83%"></span></div></td>
+        </tr>
+        <tr>
+          <td>47914</td><td>200</td><td>130</td><td>70</td><td>10</td>
+          <td><div class="progress"><span style="width:65%"></span></div></td>
+        </tr>
+        <tr>
+          <td>34871</td><td>480</td><td>240</td><td>240</td><td>240</td>
+          <td><div class="progress"><span style="width:50%"></span></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+      <div style="flex:1;min-width:220px" class="card">
+        <h4 style="margin-bottom:8px">Top Movers</h4>
+        <div class="small">34871 — 240 sold</div>
+        <div style="margin-top:12px" class="progress"><span style="width:100%"></span></div>
+      </div>
+
+      <div style="flex:1;min-width:220px" class="card">
+        <h4 style="margin-bottom:8px">Low Stock</h4>
+        <div class="small">43791 — Balance 50</div>
+        <div style="margin-top:12px" class="progress"><span style="width:10%"></span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">© 2025 Khurram Bilal Garments</div>
+</body>
+</html>

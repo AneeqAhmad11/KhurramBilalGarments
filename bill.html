@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bill Entry — KB Garments</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+  <header class="header">
+    <div class="brand">
+      <div class="logo">KB</div>
+      <div class="title">
+        <h1>Bill Entry</h1>
+        <p>Scan or type barcode to add items</p>
+      </div>
+    </div>
+    <div>
+      <a class="btn" href="index.html">Back</a>
+    </div>
+  </header>
+
+  <section style="margin-top:20px;display:grid;grid-template-columns:1fr 360px;gap:18px">
+    <div class="card">
+      <h3>New Invoice</h3>
+      <p class="small">Add items, adjust qty and finalize bill.</p>
+
+      <div style="margin-top:12px">
+        <!-- input mockups (pure html) -->
+        <label class="small">Barcode / Search</label>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <input placeholder="Scan or enter barcode" style="flex:1;padding:10px;border-radius:10px;border:1px solid var(--glass-border);background:transparent;color:inherit">
+          <button class="btn">Add</button>
+        </div>
+      </div>
+
+      <table class="table" style="margin-top:14px">
+        <thead>
+          <tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>45802A - Shirt L</td>
+            <td>2</td>
+            <td>1,250</td>
+            <td>2,500</td>
+          </tr>
+          <tr>
+            <td>34871 - Jacket M</td>
+            <td>1</td>
+            <td>3,400</td>
+            <td>3,400</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+        <div class="small">Customer: Walk-in</div>
+        <div style="text-align:right">
+          <div class="small">Subtotal</div>
+          <div style="font-weight:800;font-size:18px">5,900</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;margin-top:12px">
+        <button class="btn">Save & Print</button>
+        <button class="btn" style="background:linear-gradient(90deg,#ffb86b,#ff7b7b);color:#1a0f07">Save</button>
+      </div>
+    </div>
+
+    <aside class="card">
+      <h3>Shortcuts</h3>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+        <a class="nav-card" style="min-height:48px;padding:10px 12px;display:flex;align-items:center" href="#">
+          <div style="font-weight:700">Quick Search</div>
+          <div style="margin-left:auto" class="small">Ctrl+F</div>
+        </a>
+        <a class="nav-card" style="min-height:48px;padding:10px 12px;display:flex;align-items:center" href="#">
+          <div style="font-weight:700">Daily Summary</div>
+        </a>
+      </div>
+    </aside>
+  </section>
+
+</div>
+
+<div class="footer">© 2025 Khurram Bilal Garments</div>
+</body>
+</html>
