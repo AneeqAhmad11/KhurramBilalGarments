@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Location Sheet</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .sheet-box {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 25px;
+        background: #0b1220;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        padding: 10px;
+        border: 1px solid rgba(255,255,255,0.1);
+        font-size: 14px;
+        text-align: left;
+    }
+    th {
+        background: rgba(255,255,255,0.05);
+        color: var(--accent);
+    }
+    .back-btn {
+        margin-top: 20px;
+        padding: 10px;
+        background: linear-gradient(135deg, #1fbf9a, #3fa0ff);
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+        color: #042027;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="sheet-box">
+    <h2>Location Data (Excel Style)</h2>
+
+    <p class="small" id="barcodeText"></p>
+    <p class="small" id="subcodeText"></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Location Index</th>
+                <th>Location Value</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+
+    <a href="stock_home.html" class="back-btn">Go Back</a>
+</div>
+
+
+<script>
+// get barcode + subcode from URL
+const urlParams = new URLSearchParams(window.location.search);
+const barcode = urlParams.get("barcode");
+const sub = urlParams.get("sub");
+
+// show on page
+document.getElementById("barcodeText").innerHTML = "<strong>Barcode:</strong> " + barcode;
+document.getElementById("subcodeText").innerHTML = "<strong>Sub Barcode:</strong> " + sub;
+
+// dummy location array
+let locations = ["B18", "DF27", "LK27", "DG49", "HF22", "JK11", "MM44", "AA09"];
+
+let table = document.getElementById("tableBody");
+
+// fill table
+locations.forEach((loc, index) => {
+    let row = `
+        <tr>
+            <td>${index + 1}</td>
+            <td>${loc}</td>
+        </tr>
+    `;
+    table.innerHTML += row;
+});
+</script>
+
+</body>
+</html>

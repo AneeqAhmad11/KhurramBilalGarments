@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Page</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .stock-box {
+        max-width: 420px;
+        margin: 40px auto;
+        padding: 25px;
+        background: #0b1220;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+    .stock-box h2 {
+        margin-bottom: 20px;
+        font-size: 22px;
+    }
+    .input-field, select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.2);
+        background: transparent;
+        color: white;
+        margin-bottom: 15px;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(135deg, #1fbf9a, #3fa0ff);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    button.reset {
+        background: linear-gradient(135deg, #ff7878, #ffb480);
+        margin-top: 8px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="stock-box">
+    <h2>Stock Entry</h2>
+
+    <label class="small">Enter Barcode</label>
+    <input id="barcode" class="input-field" type="text" placeholder="Scan or type barcode">
+
+    <label class="small">Select Sub Barcode</label>
+    <select id="subcode" class="input-field">
+        <option value="">Select</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+    </select>
+
+    <button onclick="goNext()">OK</button>
+    <button class="reset" onclick="resetFields()">Reset</button>
+</div>
+
+
+<script>
+function goNext() {
+    let barcode = document.getElementById("barcode").value.trim();
+    let sub = document.getElementById("subcode").value;
+
+    if (barcode === "" || sub === "") {
+        alert("Please enter barcode and select sub barcode.");
+        return;
+    }
+
+    // go to next page with parameters
+    window.location.href = `stock_location.html?barcode=${barcode}&sub=${sub}`;
+}
+
+function resetFields() {
+    document.getElementById("barcode").value = "";
+    document.getElementById("subcode").value = "";
+}
+</script>
+
+</body>
+</html>
